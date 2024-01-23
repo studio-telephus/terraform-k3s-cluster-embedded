@@ -23,7 +23,7 @@ module "k3s" {
     services = var.cidr_services
   }
   servers = {
-    for i, item in var.containers_server : item.name => {
+    for i, item in var.containers_server : "server-${i}" => {
       ip = item.ipv4_address
       connection = {
         user        = var.ssh_username
@@ -39,7 +39,7 @@ module "k3s" {
     }
   }
   agents = {
-    for i, item in var.containers_worker : item.name => {
+    for i, item in var.containers_worker : "agent-${i}" => {
       ip = item.ipv4_address
       connection = {
         user        = var.ssh_username

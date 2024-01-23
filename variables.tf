@@ -8,12 +8,6 @@ variable "k3s_version" {
   default = "v1.28.5+k3s1"
 }
 
-variable "swarm_private_key" {
-  type        = string
-  description = "Base64 encoded private key PEM."
-  sensitive   = true
-}
-
 variable "cidr_pods" {
   type = string
 }
@@ -86,4 +80,10 @@ variable "node_connection_timeout" {
 variable "ssh_username" {
   type    = string
   default = "root"
+}
+
+variable "ssh_private_key" {
+  type        = string
+  description = "Base64 encoded private key PEM."
+  sensitive   = true
 }

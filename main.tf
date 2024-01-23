@@ -28,7 +28,7 @@ module "k3s" {
       connection = {
         user        = var.ssh_username
         host        = item.ipv4_address
-        private_key = trimspace(base64decode(var.swarm_private_key))
+        private_key = trimspace(base64decode(var.ssh_private_key))
         timeout     = var.node_connection_timeout
       }
       flags  = var.server_flags
@@ -44,7 +44,7 @@ module "k3s" {
       connection = {
         user        = var.ssh_username
         host        = item.ipv4_address
-        private_key = trimspace(base64decode(var.swarm_private_key))
+        private_key = trimspace(base64decode(var.ssh_private_key))
         timeout     = var.node_connection_timeout
       }
       labels = local.worker_labels

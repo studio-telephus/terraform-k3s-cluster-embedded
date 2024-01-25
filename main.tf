@@ -9,8 +9,8 @@ locals {
   }, local.worker_labels)
 }
 
-module "k3s" {
-  source               = "xunleii/k3s/module"
+module "k3s_cluster" {
+  source               = "github.com/studio-telephus/terraform-k3s-cluster.git?ref=main"
   k3s_version          = var.k3s_version
   cluster_domain       = var.cluster_domain
   k3s_install_env_vars = var.k3s_install_env_vars

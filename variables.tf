@@ -5,7 +5,7 @@ variable "cluster_domain" {
 
 variable "k3s_version" {
   type    = string
-  default = "v1.28.5+k3s1"
+  default = "v1.29.1+k3s2"
 }
 
 variable "cidr_pods" {
